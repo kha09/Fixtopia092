@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333A46"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/R1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:id="@+id/ivOne"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="60dp"
+            android:src="@drawable/phone" />
+
+        <TextView
+            android:id="@+id/tvTExtOne"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/ivOne"
+            android:fontFamily="serif-monospace"
+            android:text="@string/fixtopia"
+            android:textAllCaps="true"
+            android:textColor="#5199FF"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvTExtTwo"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tvTExtOne"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@+id/ivOne"
+            android:accessibilityLiveRegion="none"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/fixtopia2"
+            android:textAlignment="textEnd"
+            android:textAllCaps="true"
+            android:textColor="#2196F3"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/R2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/R1"
+        android:layout_marginTop="130dp">
+
+        <TextView
+            android:id="@+id/tvTExtthree"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="1dp"
+            android:accessibilityLiveRegion="none"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/fixtopia3"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#5199FF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTExtfour"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tvTExtthree"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1dp"
+            android:accessibilityLiveRegion="none"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/fixtopia4"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#2196F3"
+            android:textSize="26sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/R2"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/ButOne"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_shape"
+            android:text="@string/fixtopia5"
+            android:textColor="@color/Background"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/ButTwo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/ButOne"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_shape"
+            android:text="@string/fixtopia6"
+            android:textColor="@color/Background"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
