@@ -1,9 +1,12 @@
 package com.example.hsport.fixtopia092;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -15,6 +18,8 @@ import java.util.ArrayList;
 
 public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolder> {
     ArrayList<Phones> list;
+    Context context;
+    String phone1;
 
     public AdapterClass(ArrayList<Phones> list) {
         this.list = list;
@@ -24,7 +29,7 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.inflate_list_layout, parent, false);
-
+        context = parent.getContext();
         return new MyViewHolder(view);
     }
 
@@ -53,6 +58,15 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
             mobile = myView.findViewById(R.id.tvPhones);
             imageView= myView.findViewById(R.id.ivPhones);
 
+            myView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(myView.getContext(), mobile.getText(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(myView.getContext(), SelectProblem.class);
+
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
