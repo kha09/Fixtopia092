@@ -19,10 +19,14 @@ import java.util.ArrayList;
 public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolder> {
     ArrayList<Phones> list;
     Context context;
-    String phone1;
+
+    int i;
+
+
 
     public AdapterClass(ArrayList<Phones> list) {
         this.list = list;
+
     }
 
     @NonNull
@@ -40,7 +44,8 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
         String url;
         url = list.get(position).getImage();
         Glide.with(holder.imageView).load(url).into(holder.imageView);
-
+        // getting value from firebase about the company name in english and pass the value to intent
+        holder.str = list.get(position).getMobile();
     }
 
     @Override
@@ -52,18 +57,20 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
         View myView;
         TextView mobile;
         AppCompatImageView imageView;
+        String str;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             myView = itemView;
             mobile = myView.findViewById(R.id.tvPhones);
             imageView= myView.findViewById(R.id.ivPhones);
 
+
             myView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(myView.getContext(), mobile.getText(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(myView.getContext(), SelectProblem.class);
-
+                    Toast.makeText(myView.getContext(), str, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(myView.getContext(), SelectVersion.class);
+                    intent.putExtra("Logo", str);
                     context.startActivity(intent);
                 }
             });

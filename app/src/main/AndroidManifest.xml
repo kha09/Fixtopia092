@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectProblem"></activity>
+        <activity android:name=".SelectVersion"></activity>
         <activity android:name=".SelectPhoneComapny" />
         <activity android:name=".MainActivity">
             <intent-filter>
