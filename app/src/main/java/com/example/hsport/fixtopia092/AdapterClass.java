@@ -20,7 +20,6 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
     ArrayList<Phones> list;
     Context context;
 
-    int i;
 
 
 
