@@ -1,5 +1,7 @@
 package com.example.hsport.fixtopia092;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 
 public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClass.MyViewHolder> {
     ArrayList<Versions> list;
+    Context context;
     int row_index = -1;
 
     public AdapterVersionClass(ArrayList<Versions> list) {
@@ -77,6 +80,10 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(mView.getContext(), idapple.getText(), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(mView.getContext(), select_problem.class);
+                    context.startActivities(new Intent[]{intent});
+
 
 //                    //change color and get back to original color choosing multiple layout not fixed
 //                    if (linear.isPressed()) {
