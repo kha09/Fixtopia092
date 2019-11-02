@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layoutDirection="rtl">
+        android:layoutDirection="rtl"
+        >
 
         <TextView
             android:id="@+id/tvAppleVersion"
@@ -27,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/Background"
+        android:layout_marginBottom="5dp"
         >
 
     </LinearLayout>

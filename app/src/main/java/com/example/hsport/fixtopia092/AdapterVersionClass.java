@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClass.MyViewHolder> {
     ArrayList<Versions> list;
+    int row_index = -1;
 
     public AdapterVersionClass(ArrayList<Versions> list) {
         this.list = list;
@@ -32,8 +33,26 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.idapple.setText(list.get(position).getIdapple());
+
+        // fixed change color of the layout when its pressed
+        holder.linear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                row_index=position;
+                notifyDataSetChanged();
+            }
+        });
+        if(row_index==position){
+            holder.linear.setBackgroundColor(Color.parseColor("#005f70"));
+            holder.idapple.setTextColor(Color.parseColor("#ffffff"));
+        }
+        else
+        {
+            holder.linear.setBackgroundColor(Color.parseColor("#ffffff"));
+            holder.idapple.setTextColor(Color.parseColor("#000000"));
+        }
 
     }
 
@@ -46,7 +65,8 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
         View mView;
         TextView idapple;
         LinearLayout linear;
-        String col;
+        Boolean bol = true;
+
 
         public MyViewHolder(View itemVew) {
             super(itemVew);
@@ -58,14 +78,18 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
                 public void onClick(View v) {
                     Toast.makeText(mView.getContext(), idapple.getText(), Toast.LENGTH_SHORT).show();
 
-                    //Failed 
-                    if (linear.isPressed() == true){
-                        linear.setBackgroundColor(Color.parseColor("#0000ff"));
-
-                    }else{
-                        linear.setBackgroundColor(Color.parseColor("#FFFFFF"));
-
-                    }
+//                    //change color and get back to original color choosing multiple layout not fixed
+//                    if (linear.isPressed()) {
+//
+//                        if (bol) {
+//                            linear.setBackgroundColor(Color.parseColor("#0000ff"));
+//                            bol = false;
+//                        }else {
+//                            linear.setBackgroundColor(Color.parseColor("#ffffff"));
+//                            bol =true;
+//
+//                        }
+//                    }
 
                 }
             });

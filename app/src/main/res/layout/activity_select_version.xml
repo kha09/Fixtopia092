@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectVersion"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#333A46"
+    >
 
     <LinearLayout
         android:id="@+id/l1"
@@ -33,8 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layoutDirection="rtl">
+        android:layout_marginTop="0dp"
+        android:layoutDirection="rtl"
+        android:background="#333A46"
+        >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -44,8 +48,11 @@
                 android:id="@+id/rvSelectPhoneVersion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:layout_marginRight="10dp">
+                android:background="#333A46"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                >
 
 
             </androidx.recyclerview.widget.RecyclerView>
