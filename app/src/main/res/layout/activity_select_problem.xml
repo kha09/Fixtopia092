@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectVersion"
+    android:orientation="vertical"
+    android:background="#333A46"
+    >
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/Background"
+            app:navigationIcon="@drawable/shr_menu"
+            app:titleTextColor="#FFFFFF"
+            app:title="اختر نوع الجهاز">
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/lin2"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp"
+        android:layoutDirection="rtl"
+        android:background="#333A46"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSelectProblem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#333A46"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                >
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btnSelectVersion"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/btn_shape"
+            android:text="متابعة"
+            android:textColor="@color/Background"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
