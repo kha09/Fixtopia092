@@ -30,13 +30,15 @@ public class select_problem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_problem);
-
         recyclerView = findViewById(R.id.rvSelectProblem);
+
         list = new ArrayList<>();
         adapterClass = new AdapterProblemsClass(list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapterClass);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
         firebaseFirestore.collection("Problems").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -48,7 +50,7 @@ public class select_problem extends AppCompatActivity {
                         Problems problems = doc.getDocument().toObject(Problems.class);
                         list.add(problems);
 
-                        adapterClass.notifyDataSetChanged();;
+                        adapterClass.notifyDataSetChanged();
                     }
                 }
             }

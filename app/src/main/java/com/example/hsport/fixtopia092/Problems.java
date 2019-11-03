@@ -1,20 +1,20 @@
 package com.example.hsport.fixtopia092;
 
 public class Problems {
-    public String cproblem;
+    public String problem;
 
     public Problems() {
     }
 
-    public String getCproblem() {
-        return cproblem;
+    public String getProblem() {
+        return problem;
     }
 
-    public void setCproblem(String cproblem) {
-        this.cproblem = cproblem;
+    public void setProblem(String problem) {
+        this.problem = problem;
     }
 
-    public Problems(String cproblem) {
-        this.cproblem = cproblem;
+    public Problems(String problem) {
+        this.problem = problem;
     }
 }

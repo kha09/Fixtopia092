@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -26,10 +29,12 @@ public class SelectVersion extends AppCompatActivity {
 //    ExpandableLinearLayout exp ;
     RecyclerView recyclerView;
     ArrayList<Versions> list;
+    Button button;
     private AdapterVersionClass adapterClass;
     private FirebaseFirestore firebaseFirestore;
     private static final String TAG = "FireLog";
     private String company2;
+
 
 
     @Override
@@ -38,6 +43,7 @@ public class SelectVersion extends AppCompatActivity {
         setContentView(R.layout.activity_select_version);
         recyclerView = findViewById(R.id.rvSelectPhoneVersion);
         list = new ArrayList<>();
+        button = findViewById(R.id.btnSelectVersion);
         adapterClass = new AdapterVersionClass(list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -64,7 +70,28 @@ public class SelectVersion extends AppCompatActivity {
             }
         });
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(AdapterVersionClass.ccc.isEmpty()) {
+                    Toast.makeText(SelectVersion.this, "CCC is empty", Toast.LENGTH_SHORT).show();
+
+                } else {
+                        Toast.makeText(SelectVersion.this, AdapterVersionClass.ccc, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SelectVersion.this, select_problem.class);
+                        startActivity(intent);
+                    }
+                }
+
+        });
 
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        AdapterVersionClass.ccc = "";
     }
 }

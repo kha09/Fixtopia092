@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
     ArrayList<Versions> list;
     Context context;
     int row_index = -1;
+    public static String ccc = "";
 
     public AdapterVersionClass(ArrayList<Versions> list) {
         this.list = list;
@@ -38,7 +40,6 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.idapple.setText(list.get(position).getIdapple());
-
         // fixed change color of the layout when its pressed
         holder.linear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,12 +51,16 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
         if(row_index==position){
             holder.linear.setBackgroundColor(Color.parseColor("#005f70"));
             holder.idapple.setTextColor(Color.parseColor("#ffffff"));
+            ccc = list.get(position).getIdapple();
         }
         else
         {
             holder.linear.setBackgroundColor(Color.parseColor("#ffffff"));
             holder.idapple.setTextColor(Color.parseColor("#000000"));
+
         }
+
+
 
     }
 
@@ -70,36 +75,33 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
         LinearLayout linear;
         Boolean bol = true;
 
-
         public MyViewHolder(View itemVew) {
             super(itemVew);
             mView = itemVew;
             idapple = mView.findViewById(R.id.tvAppleVersion);
             linear = mView.findViewById(R.id.lin_Inflate);
-            mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(mView.getContext(), idapple.getText(), Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(mView.getContext(), select_problem.class);
-                    context.startActivities(new Intent[]{intent});
-
-
-//                    //change color and get back to original color choosing multiple layout not fixed
-//                    if (linear.isPressed()) {
+//            mView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(mView.getContext(), idapple.getText(), Toast.LENGTH_SHORT).show();
 //
-//                        if (bol) {
-//                            linear.setBackgroundColor(Color.parseColor("#0000ff"));
-//                            bol = false;
-//                        }else {
-//                            linear.setBackgroundColor(Color.parseColor("#ffffff"));
-//                            bol =true;
+////                    //change color and get back to original color choosing multiple layout not fixed
+////                    if (linear.isPressed()) {
+////
+////                        if (bol) {
+////                            linear.setBackgroundColor(Color.parseColor("#0000ff"));
+////                            bol = false;
+////                        }else {
+////                            linear.setBackgroundColor(Color.parseColor("#ffffff"));
+////                            bol =true;
+////
+////                        }
+////                    }
 //
-//                        }
-//                    }
+//                }
+//            });
 
-                }
-            });
         }
     }
 
