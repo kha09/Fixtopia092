@@ -17,6 +17,7 @@ public class AdapterProblemsClass extends RecyclerView.Adapter<AdapterProblemsCl
     ArrayList<Problems> list;
     Context context;
     int row_index = -1;
+    public static String vvv = "";
 
     public AdapterProblemsClass(ArrayList<Problems> list) {
         this.list = list;
@@ -45,6 +46,7 @@ public class AdapterProblemsClass extends RecyclerView.Adapter<AdapterProblemsCl
         if(row_index == position){
             holder.linear.setBackgroundColor(Color.parseColor("#005f70"));
             holder.problem.setTextColor(Color.parseColor("#ffffff"));
+            vvv = list.get(position).getProblem();
         }
         else
         {

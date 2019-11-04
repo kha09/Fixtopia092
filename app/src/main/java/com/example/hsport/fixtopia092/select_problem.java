@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -19,6 +23,7 @@ import java.util.ArrayList;
 public class select_problem extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Problems> list;
+    Button button;
     private AdapterProblemsClass adapterClass;
     private FirebaseFirestore firebaseFirestore;
     private static final String TAG = "FireLog";
@@ -31,13 +36,13 @@ public class select_problem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_problem);
         recyclerView = findViewById(R.id.rvSelectProblem);
-
         list = new ArrayList<>();
         adapterClass = new AdapterProblemsClass(list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapterClass);
         firebaseFirestore = FirebaseFirestore.getInstance();
+        button = findViewById(R.id.btnSelectProblem);
 
         firebaseFirestore.collection("Problems").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -55,5 +60,25 @@ public class select_problem extends AppCompatActivity {
                 }
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(AdapterProblemsClass.vvv.isEmpty()){
+                    Toast.makeText(select_problem.this, " Problem isEmpty", Toast.LENGTH_SHORT).show();
+                }else
+                {
+                    Toast.makeText(select_problem.this, AdapterProblemsClass.vvv, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(select_problem.this, UserInfo.class);
+                    startActivity(intent);
+                }
+            }
+        });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        AdapterProblemsClass.vvv = "";
+        AdapterVersionClass.ccc = "";
     }
 }

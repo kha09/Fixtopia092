@@ -74,7 +74,7 @@ public class SelectVersion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(AdapterVersionClass.ccc.isEmpty()) {
-                    Toast.makeText(SelectVersion.this, "CCC is empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SelectVersion.this, "Version is empty", Toast.LENGTH_SHORT).show();
 
                 } else {
                         Toast.makeText(SelectVersion.this, AdapterVersionClass.ccc, Toast.LENGTH_SHORT).show();

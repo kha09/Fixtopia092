@@ -23,7 +23,7 @@
             android:background="@color/Background"
             app:navigationIcon="@drawable/shr_menu"
             app:titleTextColor="#FFFFFF"
-            app:title="اختر نوع المشكلة">
+            app:title="اختر نوع الجهاز">
 
 
         </androidx.appcompat.widget.Toolbar>
