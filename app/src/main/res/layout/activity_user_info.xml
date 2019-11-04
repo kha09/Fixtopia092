@@ -1,23 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UserInfo">
+    android:layout_height="wrap_content"
+    tools:context=".UserInfo"
+    android:orientation="vertical"
+    android:layout_marginTop="50dp">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="127dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="327dp"
-        android:layout_marginEnd="190dp"
-        android:layout_marginBottom="385dp"
-        android:text="Helllo "
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:text="ادخل الاسم والرقم للمتابعة"
+        android:textSize="26sp"
+        android:padding="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/etUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="خالدعبدالغني"
+        android:padding="10dp"
+        android:textSize="26sp"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+        android:layoutDirection="rtl">
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/etUserNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0536637215"
+        android:padding="10dp"
+        android:textSize="26sp"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layoutDirection="rtl">
+
+    </EditText>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:text="حدد موقع الاستلام"
+        android:textSize="26sp"
+        android:padding="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        >
+
+    </TextView>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnSelectProblem"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/btn_shape"
+            android:text="متابعة"
+            android:textColor="@color/Background"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

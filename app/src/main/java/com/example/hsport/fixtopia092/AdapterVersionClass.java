@@ -75,6 +75,8 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
         LinearLayout linear;
         Boolean bol = true;
 
+
+
         public MyViewHolder(View itemVew) {
             super(itemVew);
             mView = itemVew;
@@ -104,5 +106,6 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
 
         }
     }
+    
 
 }
