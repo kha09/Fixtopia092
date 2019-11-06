@@ -21,6 +21,7 @@ public class UserInfo extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         AdapterProblemsClass.vvv = "";
+
     }
 
 }

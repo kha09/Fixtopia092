@@ -27,6 +27,7 @@ public class select_problem extends AppCompatActivity {
     private AdapterProblemsClass adapterClass;
     private FirebaseFirestore firebaseFirestore;
     private static final String TAG = "FireLog";
+    private String company;
 
 
 
@@ -43,6 +44,8 @@ public class select_problem extends AppCompatActivity {
         recyclerView.setAdapter(adapterClass);
         firebaseFirestore = FirebaseFirestore.getInstance();
         button = findViewById(R.id.btnSelectProblem);
+        Intent intent = getIntent();
+        company = intent.getStringExtra("com");
 
         firebaseFirestore.collection("Problems").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -69,7 +72,8 @@ public class select_problem extends AppCompatActivity {
                 }else
                 {
                     Toast.makeText(select_problem.this, AdapterProblemsClass.vvv, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(select_problem.this, UserInfo.class);
+                    Intent intent = new Intent(select_problem.this, UserCart.class);
+                    intent.putExtra("com2" , company);
                     startActivity(intent);
                 }
             }
@@ -80,5 +84,6 @@ public class select_problem extends AppCompatActivity {
         super.onBackPressed();
         AdapterProblemsClass.vvv = "";
         AdapterVersionClass.ccc = "";
+
     }
 }

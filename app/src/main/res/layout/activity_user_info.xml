@@ -80,9 +80,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:background="@drawable/btn_shape"
+            android:background="@drawable/btn_shape2"
             android:text="متابعة"
-            android:textColor="@color/Background"
+            android:textColor="#ffffff"
             android:textSize="30sp"
             android:textStyle="bold"
             />

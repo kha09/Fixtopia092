@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class AdapterProblemsClass extends RecyclerView.Adapter<AdapterProblemsClass.MyViewHolder> {
     ArrayList<Problems> list;
     Context context;
-    int row_index = -1;
+    public static int row_index2 = -1;
     public static String vvv = "";
 
     public AdapterProblemsClass(ArrayList<Problems> list) {
@@ -39,11 +39,11 @@ public class AdapterProblemsClass extends RecyclerView.Adapter<AdapterProblemsCl
         holder.linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                row_index = position;
+                row_index2 = position;
                 notifyDataSetChanged();
             }
         });
-        if(row_index == position){
+        if(row_index2 == position){
             holder.linear.setBackgroundColor(Color.parseColor("#005f70"));
             holder.problem.setTextColor(Color.parseColor("#ffffff"));
             vvv = list.get(position).getProblem();

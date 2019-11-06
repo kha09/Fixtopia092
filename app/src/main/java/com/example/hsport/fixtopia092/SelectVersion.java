@@ -79,6 +79,7 @@ public class SelectVersion extends AppCompatActivity {
                 } else {
                         Toast.makeText(SelectVersion.this, AdapterVersionClass.ccc, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(SelectVersion.this, select_problem.class);
+                        intent.putExtra("com" , company2);
                         startActivity(intent);
                     }
                 }
@@ -93,5 +94,6 @@ public class SelectVersion extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         AdapterVersionClass.ccc = "";
+
     }
 }

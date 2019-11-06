@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserCart"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/btn_shape2">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الشركة :"
+            android:layoutDirection="rtl"
+            android:textSize="26sp"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvComapny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ابل"
+            android:layoutDirection="rtl"
+            android:textSize="22sp"
+            android:paddingRight="20dp"
+            android:textColor="#ffffff">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"
+            android:layout_margin="10dp">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="نوع الجهاز :"
+            android:layoutDirection="rtl"
+            android:textSize="26sp"
+            android:padding="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" ايفون 11"
+            android:layoutDirection="rtl"
+            android:textSize="22sp"
+            android:paddingRight="20dp"
+            android:textColor="#ffffff">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"
+            android:layout_margin="10dp">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="نوع العطل :"
+            android:layoutDirection="rtl"
+            android:textSize="26sp"
+            android:padding="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff">
+
+        </TextView>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تغيير الشاشة"
+            android:layoutDirection="rtl"
+            android:textSize="22sp"
+            android:paddingRight="20dp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_shape2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="السعر :"
+            android:layoutDirection="rtl"
+            android:textSize="22sp"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="250"
+            android:layoutDirection="rtl"
+            android:textSize="22sp"
+            android:paddingRight="10dp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <Button
+            android:id="@+id/btnSelectProblem"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/btn_shape2"
+            android:text="متابعة"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</LinearLayout>
