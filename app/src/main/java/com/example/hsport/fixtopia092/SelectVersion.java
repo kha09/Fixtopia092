@@ -36,7 +36,6 @@ public class SelectVersion extends AppCompatActivity {
     private String company2;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +93,7 @@ public class SelectVersion extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         AdapterVersionClass.ccc = "";
+        AdapterVersionClass.row_index = -1;
 
     }
 }

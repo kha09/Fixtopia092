@@ -28,6 +28,7 @@ public class select_problem extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private static final String TAG = "FireLog";
     private String company;
+    private String getVersion;
 
 
 
@@ -45,7 +46,9 @@ public class select_problem extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         button = findViewById(R.id.btnSelectProblem);
         Intent intent = getIntent();
-        company = intent.getStringExtra("com");
+        company = intent.getStringExtra("passCompany2");
+        getVersion = intent.getStringExtra("passVersion");
+
 
         firebaseFirestore.collection("Problems").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -73,7 +76,9 @@ public class select_problem extends AppCompatActivity {
                 {
                     Toast.makeText(select_problem.this, AdapterProblemsClass.vvv, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(select_problem.this, UserCart.class);
-                    intent.putExtra("com2" , company);
+                    intent.putExtra("passCompany3" , company);
+                    intent.putExtra("passVersion2", getVersion);
+                    intent.putExtra("passProblem", AdapterProblemsClass.vvv);
                     startActivity(intent);
                 }
             }
@@ -84,6 +89,7 @@ public class select_problem extends AppCompatActivity {
         super.onBackPressed();
         AdapterProblemsClass.vvv = "";
         AdapterVersionClass.ccc = "";
+        AdapterProblemsClass.row_index2 = -1;
 
     }
 }

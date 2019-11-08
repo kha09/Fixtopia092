@@ -63,6 +63,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvMobileVer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=" ايفون 11"
@@ -97,6 +98,7 @@
 
 
         <TextView
+            android:id="@+id/tvProblems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="تغيير الشاشة"
@@ -130,6 +132,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="250"
@@ -151,7 +154,7 @@
         android:layout_marginTop="60dp">
 
         <Button
-            android:id="@+id/btnSelectProblem"
+            android:id="@+id/btnCart"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"

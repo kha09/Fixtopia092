@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClass.MyViewHolder> {
     ArrayList<Versions> list;
     Context context;
-    int row_index = -1;
+    public static int row_index = -1;
     public static String ccc = "";
 
     public AdapterVersionClass(ArrayList<Versions> list) {
@@ -106,6 +106,6 @@ public class AdapterVersionClass extends RecyclerView.Adapter<AdapterVersionClas
 
         }
     }
-    
+
 
 }

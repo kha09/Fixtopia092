@@ -21,7 +21,7 @@ public class UserInfo extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         AdapterProblemsClass.vvv = "";
-
+        AdapterProblemsClass.row_index2 = -1;
     }
 
 }

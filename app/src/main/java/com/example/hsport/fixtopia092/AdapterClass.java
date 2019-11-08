@@ -45,6 +45,7 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
         Glide.with(holder.imageView).load(url).into(holder.imageView);
         // getting value from firebase about the company name in english and pass the value to intent
         holder.str = list.get(position).getMobile();
+        holder.passCompany = list.get(position).getCompany();
     }
 
     @Override
@@ -57,6 +58,7 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
         TextView mobile;
         AppCompatImageView imageView;
         String str;
+        String passCompany;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             myView = itemView;
@@ -70,6 +72,7 @@ public class AdapterClass  extends RecyclerView.Adapter<AdapterClass.MyViewHolde
                     Toast.makeText(myView.getContext(), str, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(myView.getContext(), SelectVersion.class);
                     intent.putExtra("Logo", str);
+                    intent.putExtra("passCompany", passCompany);
                     context.startActivity(intent);
                 }
             });
