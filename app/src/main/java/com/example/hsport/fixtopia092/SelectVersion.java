@@ -34,6 +34,7 @@ public class SelectVersion extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private static final String TAG = "FireLog";
     private String company2;
+    private String getCompany;
 
 
     @Override
@@ -50,6 +51,7 @@ public class SelectVersion extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         Intent intent = getIntent();
         company2 = intent.getStringExtra("Logo");
+        getCompany = intent.getStringExtra("passCompany");
 
 
         firebaseFirestore.collection(company2).addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -79,6 +81,8 @@ public class SelectVersion extends AppCompatActivity {
                         Toast.makeText(SelectVersion.this, AdapterVersionClass.ccc, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(SelectVersion.this, select_problem.class);
                         intent.putExtra("com" , company2);
+                        intent.putExtra("passVersion", AdapterVersionClass.ccc);
+                        intent.putExtra("passCompany2", getCompany);
                         startActivity(intent);
                     }
                 }
