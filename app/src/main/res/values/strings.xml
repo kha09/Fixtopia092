@@ -6,4 +6,7 @@
     <string name="fixtopia4">ضمان للصيانة تمتد لستة شهور</string>
     <string name="fixtopia5">طلب صيانة جديد</string>
     <string name="fixtopia6">متابعة صيانة سابقة</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="action_geolocate">Pick Place</string>
+
 </resources>
