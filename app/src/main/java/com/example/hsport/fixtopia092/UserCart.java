@@ -3,6 +3,7 @@ package com.example.hsport.fixtopia092;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,9 +16,11 @@ public class UserCart extends AppCompatActivity {
     TextView tvPrice;
     Button btnCart;
 //    String [][] listString;
-    String [] values = {"ايفون 7","ايفون 8","ايفون اكس"};
+    String [] iphone = {"ايفون 7","ايفون 8","ايفون اكس"};
+    String [] samsung = {"سامسونج 10","سامسونج نوت 10","سامسونج 10 بلس"};
     String [] problems = {"عطل بالكاميرا","عطل بالشاشة","عطل بالسماعة"};
     String [][] price = {{"111","222","511"},{"333","444","522"},{"311","411","533"}};
+
 
 //    String[][] price ={{"ايفون 7","ايفون 8"},{"عطل بالكاميرا","عطل بالشاشة"}};
 
@@ -31,7 +34,6 @@ public class UserCart extends AppCompatActivity {
         setValues();
 //        listString[0][0] = "Table";
 //        listString[0][1] = "عطل بالشاشة";
-
 
 
 
@@ -61,7 +63,7 @@ public class UserCart extends AppCompatActivity {
 //        price[1][2] = "222";
 //        price[2][1] = "333";
 //        price[2][2] = "444";
-
+        String[] bbb = new String[0];
 
         tvCompany.setText(low);
         tvMobileVer.setText(bow);
@@ -76,11 +78,22 @@ public class UserCart extends AppCompatActivity {
 //
 //        }
 
-
+        if(!low.isEmpty()){
+            switch (low){
+                case "أبل" : {
+                    bbb = iphone;
+                    break;
+                }
+                case "سامسونج" : {
+                    bbb = samsung;
+                    break;
+                }
+            }
+        }
         //working method for setting up price
-        for(int i =0; i<values.length; i++){
+        for(int i =0; i<bbb.length; i++){
                 for(int g=0; g<problems.length;g++){
-                    if(bow.equals(values[i]) && sow.equals(problems[g])){
+                    if(bow.equals(bbb[i]) && sow.equals(problems[g])){
                         tvPrice.setText(price[i][g]);
                     }
                 }

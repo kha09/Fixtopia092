@@ -9,4 +9,10 @@
     <string name="title_activity_maps">Map</string>
     <string name="action_geolocate">Pick Place</string>
 
+    <string-array name="vvv">
+        <item>ايفون 7</item>
+        <item>ايفون 8</item>
+        <item>ايفون اكس</item>
+
+    </string-array>
 </resources>
