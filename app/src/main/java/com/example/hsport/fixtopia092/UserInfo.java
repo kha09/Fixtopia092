@@ -42,6 +42,10 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 
 import java.io.IOException;
@@ -58,7 +62,10 @@ public class UserInfo extends AppCompatActivity implements OnMapReadyCallback {
     FusedLocationProviderClient mFusedLocationClient;
     int PERMISSION_ID = 44;
     String one, two;
-
+    UserData userData = new UserData();
+    FirebaseFirestore firebaseFirestore;
+    DatabaseReference reff;
+    String name, number;
 
 
 
@@ -75,10 +82,28 @@ public class UserInfo extends AppCompatActivity implements OnMapReadyCallback {
         imageButton = findViewById(R.id.ibLocation);
         button = findViewById(R.id.btnInfo);
 
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+
+
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getLastLocation();
+                //ToDo: put more roles to name and number;
+                name = etUserName.getText().toString();
+                number = etUserNum.getText().toString();
+                userData.setUserName(name);
+                userData.setUserNumber(number);
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseFirestore.collection("UserData").add(userData);
+                Intent intent = new Intent(UserInfo.this, TrackOrder.class);
+                startActivity(intent);
 
             }
         });
@@ -111,6 +136,10 @@ public class UserInfo extends AppCompatActivity implements OnMapReadyCallback {
                             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                             one = location.getLatitude()+"";
                             two = location.getLongitude()+"";
+                            //ToDo: test lan and longt in UserData;
+                            userData.setLatUser(one);
+                            userData.setLanUser(two);
+
                             gMap.addMarker(new MarkerOptions().position(latLng));
                             gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM));
                         }
